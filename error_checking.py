@@ -1,7 +1,7 @@
 # Error Checking in python
 # Author: Kurt Medina
-# Date: 16/10/2024
-# Version: 1
+# Date: 25/10/2024
+# Version: 3
 
 # region V1
 # Code that tests that a valid number is entered
@@ -52,7 +52,7 @@ def valid_num(question, low, high):
     while True:
         try:
             response = int(input(question))
-            if low < response < high:
+            if low <= response <= high:
                 break
             else:
                 print(error+"\n")
@@ -62,3 +62,15 @@ def valid_num(question, low, high):
 
 num_1 = valid_num("Enter a number between 1 and 15\n", 1, 15)
 print(f"You entered {num_1}")
+
+num_2 = valid_num("Now enter a number between 50 and 100\n", 50, 100)
+print(f"You entered {num_2}")
+
+num_3 = valid_num("Lastly enter a number between 70 and 80\n", 70, 80)
+print(f"You entered {num_3}")
+
+# Multiply the result of num_1, nuym_2, and num_3
+multiply = num_1 * num_2 * num_3
+print(f"Your three numbers multiplied together are equal to {multiply}")
+sum = num_1 + num_2 + num_3
+print(f"The total of {num_1}, {num_2}, and {num_3} is {sum}")
